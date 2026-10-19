@@ -10,7 +10,7 @@ $ipk = 3.75;
 $statusAktif = true;
 $catatanTambahan = null;
 const NAMA_MATA_KULIAH = "Pemrograman Web Dasar";
-const PROFIL_GITHUB = "https://github.com/wafitecnoo-max";
+const PROFIL_GITHUB = "wafitecnoo-max";
 ?>
 
 <!DOCTYPE html>
@@ -64,6 +64,9 @@ echo "<p>Konten yang dihasilkan oleh PHP.</p>";
     </header>
     <main>
         <section id="home">
+            <p>Halo, saya <strong><?php echo $namaMahasiswa; ?></strong>. Saya sedang mempelajari matakuliah
+<strong><?php print NAMA_MATA_KULIAH; ?></strong> pada tahun akademik <?php echo $tahunAkademik;
+?>.</p>
             <h2>Selamat Datang</h2>
             <p>Halo, saya Muhammad Indzar Wafi. Saya sedang mempelajari Pemrograman Web Dasar.</p>
             <img src="img/foto-profil.jpg" alt="Foto profil Muhammad Indzar Wafi">
@@ -83,7 +86,7 @@ echo "<p>Konten yang dihasilkan oleh PHP.</p>";
         </section>
         <section id="contact">
             <h2>Kontak</h2>
-            <p>Kunjungi <a href="https://github.com/wafitecnoo-max">profil GitHub saya</a>.</p>
+            <p>Kunjungi <a target="_blank" href="https://github.com/<?php echo PROFIL_GITHUB; ?>">profil GitHub saya</a>.</p>
            <form id="contactForm" action="index.html" method="get">
                 <div class="form-group">
                     <label for="nama">Nama Lengkap</label><br>
