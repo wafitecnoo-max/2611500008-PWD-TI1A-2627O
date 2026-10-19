@@ -9,13 +9,23 @@
 </head>
 
 <body>
-<?php
+    <?php
+// Pengujian awal eksekusi PHP.
+echo "PHP berhasil dijalankan.";
+?>
+
+    <?php
 // Komentar satu baris.
-print "Keluaran menggunakan print.";
+echo "Keluaran menggunakan echo.";
 /*
 Komentar beberapa baris.
 Komentar ini tidak ditampilkan pada halaman.
 */
+?>
+
+<p>Konten HTML statis.</p>
+<?php
+echo "<p>Konten yang dihasilkan oleh PHP.</p>";
 ?>
     <header>
         <h1>Profil Mahasiswa</h1>
