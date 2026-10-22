@@ -212,7 +212,7 @@ echo "<p>Konten yang dihasilkan oleh PHP.</p>";
         </section>
     </main>
     <footer>
-        <p>&copy; 2026 Muhammad Indzar Wafi [2611500008]</p>
+        <p>&copy; <?= date("Y") ?> <?php echo $namaMahasiswa; ?> [<?= $nim ?>]</p>
     </footer>
     <script src="script.js"></script>
 </body>
