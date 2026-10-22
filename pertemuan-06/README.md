@@ -52,8 +52,11 @@ konstanta, operator, percabangan, perulangan, serta fungsi bawaan PHP.
 
 ## Pengujian
 
-- **Eksekusi PHP**: teks "PHP berhasil dijalankan." dan "Keluaran menggunakan echo." tampil di
-  halaman, sedangkan isi komentar tidak tampil. Hasil: sesuai harapan.
+- **Eksekusi PHP**: pada tahap awal, teks "PHP berhasil dijalankan." dan "Keluaran menggunakan
+  echo." tampil di halaman, sedangkan isi komentar tidak tampil. Hasil: sesuai harapan. Blok uji
+  ini kemudian dihapus pada commit `16b4736` setelah pengujian selesai.
+- **Sapaan Beranda**: kalimat sapaan hanya tampil satu kali di bawah judul "Selamat Datang", dengan
+  nama, mata kuliah, dan tahun akademik diambil dari variabel/konstanta PHP. Hasil: sesuai harapan.
 - **Variabel dan konstanta**: nama, mata kuliah, tahun akademik, program studi, dan tautan GitHub
   tampil sesuai nilai variabel/konstanta. Hasil: sesuai harapan.
 - **Operator dan percabangan**: dengan `$semester = 2` dan `$programStudi = "TI"`, halaman
@@ -71,8 +74,7 @@ konstanta, operator, percabangan, perulangan, serta fungsi bawaan PHP.
     dikirim ke `index.php`. Pemrosesan data formulir di sisi peladen dapat dikembangkan pada
     pertemuan berikutnya.
   - Pada bagian Target Belajar terdapat elemen `<h3>` di dalam `<ol>` dan `<ol>` bersarang, yang
-    belum sesuai struktur HTML yang valid. Paragraf sapaan di bagian Beranda juga masih ditulis dua
-    kali (versi PHP dan versi statis). Keduanya dapat dirapikan pada pengembangan berikutnya.
+    belum sesuai struktur HTML yang valid. Bagian ini dapat dirapikan pada pengembangan berikutnya.
 
 ## Riwayat Pengembangan
 
@@ -93,3 +95,6 @@ konstanta, operator, percabangan, perulangan, serta fungsi bawaan PHP.
 - **Menampilkan catatan tambahan berdasarkan nilai null** (`b551764`).
 - **Menampilkan tahun dinamis pada footer** (`3c06589`).
 - **Menyesuaikan action formulir ke index.php** (`6a37e4f`).
+- **Memperbaiki kalimat sapaan di Beranda yang muncul dua kali** (`16b4736`): menghapus paragraf
+  sapaan statis sehingga hanya tersisa versi PHP, memindahkan judul "Selamat Datang" ke atas
+  paragraf sapaan, serta menghapus blok uji keluaran PHP di awal `<body>`.
