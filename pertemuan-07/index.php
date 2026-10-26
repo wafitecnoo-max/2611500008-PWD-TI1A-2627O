@@ -1,9 +1,13 @@
 <?php
-
+session_start();
 // P7 menangkap nilai dari input form  
-echo $_GET['nama'];
-echo $_GET['email'];
-echo $_GET['semester'];
+$_SESSION['nama'] = $_POST['nama'];
+$_SESSION['email'] = $_POST['email'];
+$_SESSION['semester'] = $_POST['semester'];
+
+$nama = $_SESSION['nama'];
+$email = $_SESSION['email'];
+$semester = $_SESSION['semester'];
 
 // P6: PHP dasar dan pemrograman sisi peladen
 // Bagian 1: Variabel dan konstanta
@@ -146,20 +150,20 @@ $fokusProgramStudi = "Belum ditentukan";
         <section id="contact">
             <h2>Kontak</h2>
             <p>Kunjungi <a target="_blank" href="https://github.com/<?php echo PROFIL_GITHUB; ?>">profil GitHub saya</a>.</p>
-           <form id="contactForm" action="index.php" method="get" novalidate>
+           <form id="contactForm" action="index.php" method="post" novalidate>
                 <div class="form-group">
                     <label for="nama">Nama Lengkap</label><br>
                     <input class="input-form" type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap"
-                        minlength="3" maxlength="50" required>
+                        minlength="3" maxlength="50" value= <?php echo $namaMahasiswa; ?> required>
                 </div>
                 <div class="form-group">
                     <label for="email">Email</label><br>
                     <input class="input-form" type="email" id="email" name="email" placeholder="nama@email.com"
-                        required>
+                        value="<?php echo $email; ?>" required>
                 </div>
                 <div class="form-group">
                     <label for="semester">Semester</label><br>
-                    <input class="input-form" type="number" id="semester" name="semester" min="1" max="14" required>
+                    <input class="input-form" type="number" id="semester" name="semester" min="1" max="14" value="<?php echo $semester; ?>" required>
                 </div>
                 <div class="form-group">
                     <label for="tanggal">Tanggal Kunjungan</label><br>
