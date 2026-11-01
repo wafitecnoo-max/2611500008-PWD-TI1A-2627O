@@ -50,3 +50,9 @@ F.2-F.5 dan F.6 tahap 1 menampilkan pesan kesalahan validasi PHP:
   - nama berisi spasi saja: "Nama lengkap wajib diisi."
   - data valid dan halaman GET: tidak ada pesan kesalahan
 - temuan: kiriman buatan nama[]=x menghasilkan peringatan "Array to string conversion" karena kode modul melakukan (string) pada larik; belum diperbaiki agar tetap sesuai modul
+
+F.6 tahap 2 mengamankan keluaran data formulir:
+- menampilkan bagian "Data yang Diterima Peladen" setelah </form> dengan htmlspecialchars(), foreach untuk minat, dan nl2br() untuk pesan
+- pengujian dengan Edge headless melalui localhost: data valid menampilkan nama, email, semester, tanggal, jenis pesan, program studi, HTML dan CSS, serta pesan
+- <b>Mahasiswa</b> pada pesan tampil sebagai teks biasa; sumber halaman berisi &lt;b&gt;Mahasiswa&lt;/b&gt;
+- membuka halaman melalui GET tidak menampilkan bagian tersebut
