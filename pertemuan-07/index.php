@@ -1,13 +1,9 @@
 <?php
-session_start();
-// P7 menangkap nilai dari input form  
-$_SESSION['nama'] = $_POST['nama'];
-$_SESSION['email'] = $_POST['email'];
-$_SESSION['semester'] = $_POST['semester'];
-
-$nama = $_SESSION['nama'];
-$email = $_SESSION['email'];
-$semester = $_SESSION['semester'];
+// P7: penggunaan POST
+if (isset($_POST['nama'])) {
+  $nama = $_POST['nama'];
+  echo "Nama yang diterima: " . htmlspecialchars($nama, ENT_QUOTES, 'UTF-8');
+}
 
 // P6: PHP dasar dan pemrograman sisi peladen
 // Bagian 1: Variabel dan konstanta
@@ -154,16 +150,16 @@ $fokusProgramStudi = "Belum ditentukan";
                 <div class="form-group">
                     <label for="nama">Nama Lengkap</label><br>
                     <input class="input-form" type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap"
-                        minlength="3" maxlength="50" value= <?php echo $namaMahasiswa; ?> required>
+                        minlength="3" maxlength="50" required>
                 </div>
                 <div class="form-group">
                     <label for="email">Email</label><br>
                     <input class="input-form" type="email" id="email" name="email" placeholder="nama@email.com"
-                        value="<?php echo $email; ?>" required>
+                        required>
                 </div>
                 <div class="form-group">
                     <label for="semester">Semester</label><br>
-                    <input class="input-form" type="number" id="semester" name="semester" min="1" max="14" value="<?php echo $semester; ?>" required>
+                    <input class="input-form" type="number" id="semester" name="semester" min="1" max="14" required>
                 </div>
                 <div class="form-group">
                     <label for="tanggal">Tanggal Kunjungan</label><br>
