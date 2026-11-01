@@ -14,3 +14,8 @@ hasil pengujian indexGet.php melalui server bawaan PHP 8.3 (Apache Laragon sedan
 - <b>X</b> pada parameter nama dikeluarkan sebagai &lt;b&gt;X&lt;/b&gt;
 
 belum diuji: pengiriman formulir melalui tombol Kirim di peramban
+
+E.2 mengubah formulir utama menjadi POST:
+- index.php sudah memakai method="post" sejak tahap sebelumnya, jadi tidak ada perubahan kode pada tahap ini
+- pengujian melalui localhost: sumber halaman memuat action="index.php" method="post", navigasi dan tombol Kirim tersedia
+- indexGet.php tetap memakai method="get"
