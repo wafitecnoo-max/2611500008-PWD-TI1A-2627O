@@ -63,3 +63,9 @@ G menerapkan session dan pola PRG:
 - pengujian dengan Edge headless melalui localhost: data valid dikirim, peramban kembali ke index.php dan data tampil; setelah muat ulang tanpa cache data tetap tampil
 - pengujian dengan curl: POST mendapat respons 302 ke index.php; pesan "Format email tidak valid." muncul pada GET pertama dan hilang pada GET kedua, sedangkan data tetap tampil; sesi baru tidak menampilkan data maupun peringatan
 - catatan: karena kode modul menyimpan data sebelum memeriksa hasil validasi, data yang gagal validasi juga tampil pada "Data yang Diterima Peladen", dan isian tidak dikembalikan ke kolom formulir
+
+H pengujian hasil akhir:
+- cara menjalankan: aktifkan Laragon dengan Start All, lalu buka http://localhost/PWD/2627o/ti1a/2611500008-PWD-TI1A-2627O/pertemuan-07/ untuk formulir POST dan indexGet.php untuk demonstrasi GET
+- index.php, indexGet.php, style.css, script.js, dan img/foto-profil.jpg merespons HTTP 200 melalui localhost, dan pertemuan-06 tidak diubah
+- Edge headless: email salah ditolak script.js, data valid tampil setelah PRG pada index.php, dan parameter tampil di URL pada indexGet.php; tidak ada keluaran galat PHP
+- pengujian dijalankan otomatis, belum diperiksa secara visual di peramban biasa
