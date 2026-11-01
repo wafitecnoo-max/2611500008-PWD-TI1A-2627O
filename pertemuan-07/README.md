@@ -13,7 +13,7 @@ hasil pengujian indexGet.php melalui server bawaan PHP 8.3 (Apache Laragon sedan
 - ?nama=Andi&email=andi%40example.com hanya menampilkan nama
 - <b>X</b> pada parameter nama dikeluarkan sebagai &lt;b&gt;X&lt;/b&gt;
 
-belum diuji: pengiriman formulir melalui tombol Kirim di peramban
+pengiriman formulir melalui tombol Kirim diuji pada tahap E.4 dengan Edge headless melalui localhost
 
 E.2 mengubah formulir utama menjadi POST:
 - index.php sudah memakai method="post" sejak tahap sebelumnya, jadi tidak ada perubahan kode pada tahap ini
@@ -26,3 +26,13 @@ E.3 menerima data formulir menggunakan POST:
 - pengujian permintaan POST ke localhost: nama=Wafi Test menampilkan "Nama yang diterima: Wafi Test", URL tetap index.php tanpa parameter
 - <b>X</b> pada nama dikeluarkan sebagai &lt;b&gt;X&lt;/b&gt;
 - membuka halaman melalui GET tidak lagi menghasilkan peringatan PHP
+
+E.4 menyesuaikan pembacaan input dan validasi formulir:
+- index.php membaca email, semester, tanggal, jenis_pesan, prodi, pesan, dan minat melalui $_POST; checkbox diubah menjadi name="minat[]"
+- selector topikDipilih pada script.js mencakup minat dan minat[]
+- pengujian dengan mengisi dan mengklik Kirim memakai Edge headless melalui localhost:
+  - index.php dengan HTML dan CSS, hanya HTML, atau hanya CSS: formulir terkirim, URL tanpa parameter
+  - index.php tanpa topik: muncul "Pilih minimal satu topik yang diminati.", formulir tidak terkirim
+  - indexGet.php dengan satu topik: formulir terkirim, parameter tampil di URL (nama, email, semester, tanggal, jenis_pesan, minat, prodi, pesan) dan nama ditampilkan
+  - indexGet.php tanpa topik: muncul pesan yang sama, formulir tidak terkirim
+  - indexGet.php dengan nama kosong: muncul "Nama lengkap harus diisi 3 sampai 50 karakter.", formulir tidak terkirim
