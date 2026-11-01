@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 // P7: penggunaan POST
 $nama = trim((string) ($_POST['nama'] ?? ''));
 $email = trim((string) ($_POST['email'] ?? ''));
@@ -129,6 +131,34 @@ break;
 default:
 $fokusProgramStudi = "Belum ditentukan";
 }
+
+// P7
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  $_SESSION['pesanKesalahan'] = $pesanKesalahan;
+
+  $_SESSION['nama'] = $nama;
+  $_SESSION['email'] = $email;
+  $_SESSION['semester'] = $semesterForm;
+  $_SESSION['tanggal'] = $tanggal;
+  $_SESSION['jenis_pesan'] = $jenisPesan;
+  $_SESSION['prodi'] = $prodi;
+  $_SESSION['minat'] = $minat;
+  $_SESSION['pesan'] = $pesan;
+
+  header('Location: index.php');
+  exit;
+}
+
+$pesanKesalahan = $_SESSION['pesanKesalahan'] ?? '';
+
+$nama = $_SESSION['nama'] ?? '';
+$email = $_SESSION['email'] ?? '';
+$semesterForm = $_SESSION['semester'] ?? '';
+$tanggal = $_SESSION['tanggal'] ?? date("Y-m-d");
+$jenisPesan = $_SESSION['jenis_pesan'] ?? '';
+$prodi = $_SESSION['prodi'] ?? '';
+$minat = $_SESSION['minat'] ?? '';
+$pesan = $_SESSION['pesan'] ?? '';
 ?>
 
 <!DOCTYPE html>
@@ -231,6 +261,12 @@ $fokusProgramStudi = "Belum ditentukan";
                 <p class="form-feedback-error">
                     <?= htmlspecialchars($pesanKesalahan, ENT_QUOTES, 'UTF-8') ?>
                 </p>
+
+                <?php
+                unset(
+                    $_SESSION['pesanKesalahan']
+                );
+                ?>
             <?php endif; ?>
             <p>Kunjungi <a target="_blank" href="https://github.com/<?php echo PROFIL_GITHUB; ?>">profil GitHub saya</a>.</p>
            <form id="contactForm" action="index.php" method="post" novalidate>
@@ -284,7 +320,7 @@ $fokusProgramStudi = "Belum ditentukan";
                 <p id="formFeedback"></p>
             </form>
 
-            <?php if ($_SERVER['REQUEST_METHOD'] === 'POST'): ?>
+            <?php if (!empty($nama)): ?>
                 <h3>Data yang Diterima Peladen</h3>
 
                 <p>Nama:

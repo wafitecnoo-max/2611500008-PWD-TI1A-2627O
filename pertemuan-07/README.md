@@ -56,3 +56,10 @@ F.6 tahap 2 mengamankan keluaran data formulir:
 - pengujian dengan Edge headless melalui localhost: data valid menampilkan nama, email, semester, tanggal, jenis pesan, program studi, HTML dan CSS, serta pesan
 - <b>Mahasiswa</b> pada pesan tampil sebagai teks biasa; sumber halaman berisi &lt;b&gt;Mahasiswa&lt;/b&gt;
 - membuka halaman melalui GET tidak menampilkan bagian tersebut
+
+G menerapkan session dan pola PRG:
+- menambahkan session_start(), menyimpan hasil pemrosesan ke $_SESSION, mengalihkan dengan header('Location: index.php') dan exit, lalu mengambil data session setelah pengalihan
+- $_SESSION['pesanKesalahan'] dihapus dengan unset() setelah ditampilkan; kondisi "Data yang Diterima Peladen" diubah menjadi !empty($nama)
+- pengujian dengan Edge headless melalui localhost: data valid dikirim, peramban kembali ke index.php dan data tampil; setelah muat ulang tanpa cache data tetap tampil
+- pengujian dengan curl: POST mendapat respons 302 ke index.php; pesan "Format email tidak valid." muncul pada GET pertama dan hilang pada GET kedua, sedangkan data tetap tampil; sesi baru tidak menampilkan data maupun peringatan
+- catatan: karena kode modul menyimpan data sebelum memeriksa hasil validasi, data yang gagal validasi juga tampil pada "Data yang Diterima Peladen", dan isian tidak dikembalikan ke kolom formulir
