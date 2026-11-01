@@ -1,9 +1,9 @@
 <?php
-
-// P7 menangkap nilai dari input form  
-echo $_GET['nama'];
-echo $_GET['email'];
-echo $_GET['semester'];
+// P7: penggunaan GET
+if (isset($_GET['nama'])) {
+  $nama = $_GET['nama'];
+  echo "Nama yang diterima: " . htmlspecialchars($nama, ENT_QUOTES, 'UTF-8');
+}
 
 // P6: PHP dasar dan pemrograman sisi peladen
 // Bagian 1: Variabel dan konstanta
@@ -146,7 +146,7 @@ $fokusProgramStudi = "Belum ditentukan";
         <section id="contact">
             <h2>Kontak</h2>
             <p>Kunjungi <a target="_blank" href="https://github.com/<?php echo PROFIL_GITHUB; ?>">profil GitHub saya</a>.</p>
-           <form id="contactForm" action="index.php" method="get" novalidate>
+           <form id="contactForm" action="indexGet.php" method="get" novalidate>
                 <div class="form-group">
                     <label for="nama">Nama Lengkap</label><br>
                     <input class="input-form" type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap"
