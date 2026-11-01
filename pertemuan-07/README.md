@@ -36,3 +36,17 @@ E.4 menyesuaikan pembacaan input dan validasi formulir:
   - indexGet.php dengan satu topik: formulir terkirim, parameter tampil di URL (nama, email, semester, tanggal, jenis_pesan, minat, prodi, pesan) dan nama ditampilkan
   - indexGet.php tanpa topik: muncul pesan yang sama, formulir tidak terkirim
   - indexGet.php dengan nama kosong: muncul "Nama lengkap harus diisi 3 sampai 50 karakter.", formulir tidak terkirim
+
+F.2-F.5 dan F.6 tahap 1 menampilkan pesan kesalahan validasi PHP:
+- menambahkan normalisasi trim() sebelum validasi, pemeriksaan kelengkapan, format semester dan email, serta nilai pilihan jenis pesan, program studi, dan minat
+- menghapus echo nama sebelum <!doctype html> dan menampilkan $pesanKesalahan setelah judul Kontak memakai htmlspecialchars()
+- pengujian memakai permintaan POST langsung ke localhost dengan curl sehingga tidak melewati script.js; script.js tidak perlu dinonaktifkan
+  - formulir kosong: muncul sepuluh pesan sesuai modul, dari "Nama lengkap wajib diisi." sampai "Program studi tidak valid."
+  - email bukan-email: "Format email tidak valid."
+  - tanpa minat: "Minat wajib dipilih minimal satu."
+  - semester 15 dan abc: "Semester harus berupa bilangan bulat antara 1 dan 14."
+  - jenis pesan dan prodi di luar pilihan: "Jenis pesan tidak valid. Program studi tidak valid."
+  - minat PHP: "Pilihan topik tidak valid."; minat bukan larik: "Format pilihan topik tidak valid."
+  - nama berisi spasi saja: "Nama lengkap wajib diisi."
+  - data valid dan halaman GET: tidak ada pesan kesalahan
+- temuan: kiriman buatan nama[]=x menghasilkan peringatan "Array to string conversion" karena kode modul melakukan (string) pada larik; belum diperbaiki agar tetap sesuai modul
