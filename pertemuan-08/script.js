@@ -126,3 +126,62 @@ contactForms.forEach((contactForm) => {
     }
   });
 });
+
+// Validasi formulir Rencana Kegiatan Mahasiswa.
+const rencanaForms = document.querySelectorAll('form[data-validation="rencana"]');
+
+rencanaForms.forEach((rencanaForm) => {
+  const formFeedback = rencanaForm.querySelector("[data-form-feedback]");
+  const ambilInput = (nama) => rencanaForm.elements.namedItem(nama);
+
+  const bersihkanFeedback = () => {
+    if (formFeedback) {
+      formFeedback.textContent = "";
+      formFeedback.className = "form-feedback";
+    }
+  };
+
+  const tampilkanKesalahan = (pesanKesalahan) => {
+    if (formFeedback) {
+      formFeedback.textContent = pesanKesalahan;
+      formFeedback.className = "form-feedback-error";
+    }
+  };
+
+  rencanaForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    bersihkanFeedback();
+
+    const namaKegiatan = ambilInput("nama_kegiatan").value.trim();
+    const kategoriKegiatan = ambilInput("kategori_kegiatan").value;
+    const tanggalPelaksanaan = ambilInput("tanggal_pelaksanaan").value;
+    const lokasiKegiatan = ambilInput("lokasi_kegiatan").value.trim();
+    const deskripsiKegiatan = ambilInput("deskripsi_kegiatan").value.trim();
+
+    if (namaKegiatan.length < 3 || namaKegiatan.length > 100) {
+      tampilkanKesalahan("Nama kegiatan harus diisi 3 sampai 100 karakter.");
+      return;
+    }
+    if (!["akademik", "organisasi", "sosial"].includes(kategoriKegiatan)) {
+      tampilkanKesalahan("Pilih kategori kegiatan.");
+      return;
+    }
+    if (tanggalPelaksanaan === "") {
+      tampilkanKesalahan("Tanggal pelaksanaan harus diisi.");
+      return;
+    }
+    if (lokasiKegiatan.length < 3 || lokasiKegiatan.length > 100) {
+      tampilkanKesalahan("Lokasi kegiatan harus diisi 3 sampai 100 karakter.");
+      return;
+    }
+    if (deskripsiKegiatan.length === 0 || deskripsiKegiatan.length > 300) {
+      tampilkanKesalahan("Deskripsi kegiatan harus diisi dan maksimal 300 karakter.");
+      return;
+    }
+
+    rencanaForm.submit();
+  });
+
+  rencanaForm.addEventListener("reset", bersihkanFeedback);
+  rencanaForm.addEventListener("input", bersihkanFeedback);
+});
