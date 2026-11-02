@@ -1,6 +1,58 @@
 <?php
 session_start();
 
+if ($_SERVER["REQUEST_METHOD"] === "POST" && ($_POST["jenis_formulir"] ?? "") === "rencana") {
+	// 1) Normalisasi: hapus spasi awal/akhir, rapikan spasi ganda, samakan baris baru.
+	$namaKegiatan = trim(preg_replace('/\s+/', ' ', (string) ($_POST["nama_kegiatan"] ?? "")));
+	$kategoriKegiatan = trim((string) ($_POST["kategori_kegiatan"] ?? ""));
+	$tanggalPelaksanaan = trim((string) ($_POST["tanggal_pelaksanaan"] ?? ""));
+	$lokasiKegiatan = trim(preg_replace('/\s+/', ' ', (string) ($_POST["lokasi_kegiatan"] ?? "")));
+	$deskripsiKegiatan = trim(str_replace(["\r\n", "\r"], "\n", (string) ($_POST["deskripsi_kegiatan"] ?? "")));
+
+	// 2) Validasi sisi peladen.
+	$errorsRencana = [];
+
+	if (mb_strlen($namaKegiatan) < 3 || mb_strlen($namaKegiatan) > 100) {
+		$errorsRencana[] = "Nama kegiatan harus 3 sampai 100 karakter.";
+	}
+
+	if (!in_array($kategoriKegiatan, ["akademik", "organisasi", "sosial"], true)) {
+		$errorsRencana[] = "Kategori kegiatan tidak valid.";
+	}
+
+	$objekTanggal = DateTime::createFromFormat("Y-m-d", $tanggalPelaksanaan);
+	if (!$objekTanggal || $objekTanggal->format("Y-m-d") !== $tanggalPelaksanaan) {
+		$errorsRencana[] = "Tanggal pelaksanaan tidak valid.";
+	}
+
+	if (mb_strlen($lokasiKegiatan) < 3 || mb_strlen($lokasiKegiatan) > 100) {
+		$errorsRencana[] = "Lokasi kegiatan harus 3 sampai 100 karakter.";
+	}
+
+	if (mb_strlen($deskripsiKegiatan) === 0 || mb_strlen($deskripsiKegiatan) > 300) {
+		$errorsRencana[] = "Deskripsi kegiatan harus diisi dan maksimal 300 karakter.";
+	}
+
+	// 3) Simpan ke session: pesan kesalahan ATAU data yang valid.
+	if (count($errorsRencana) > 0) {
+		$_SESSION["rencana_errors"] = $errorsRencana;
+	} else {
+		$_SESSION["nama_kegiatan"] = $namaKegiatan;
+		$_SESSION["kategori_kegiatan"] = $kategoriKegiatan;
+		$_SESSION["tanggal_pelaksanaan"] = $tanggalPelaksanaan;
+		$_SESSION["lokasi_kegiatan"] = $lokasiKegiatan;
+		$_SESSION["deskripsi_kegiatan"] = $deskripsiKegiatan;
+	}
+
+	// 4) PRG: redirect agar refresh tidak mengirim ulang POST.
+	header("Location: index.php#rencana");
+	exit;
+}
+
+// Pesan kesalahan hanya tampil sekali (flash), lalu dihapus dari session.
+$errorsRencana = $_SESSION["rencana_errors"] ?? [];
+unset($_SESSION["rencana_errors"]);
+
 // P7: Memproses data formulir dan menyimpannya ke dalam session.
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 	$nama = trim((string) ($_POST["nama"] ?? ""));
