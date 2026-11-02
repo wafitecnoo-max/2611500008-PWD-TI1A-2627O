@@ -1,7 +1,7 @@
-pada p7, saya melakukan:
+pada p8, saya melakukan:
 
-1. menyalin artefak P6 untuk menjadi baseline P7
-2. menguji fitur pada P7, hasilnya jalan seperti P6.
+1. menyalin artefak P7 untuk menjadi baseline P8
+2. menguji fitur pada P8, hasilnya jalan seperti P7.
 3. menambah item menu rencana kegiatan
 4. membuat section rencana kegiatan
 5. menambahkan section rencana kegiatan mahasiswa dan formulir
