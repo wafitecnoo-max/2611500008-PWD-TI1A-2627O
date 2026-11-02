@@ -11,4 +11,4 @@ pada p7, saya melakukan:
 9. menambahkan Tampilkan kesalahan dan hasil di bawah `</form>`
 10. menambahkan Proses PHP di bagian paling atas index.php
 11. tambah validasi sisi klien untuk formulir rencana
-12. 
+12. memperbaiki formulir rencana: menyamakan nama input tanggal_pelaksanaan, menutup tag section rencana, dan menambahkan novalidate
