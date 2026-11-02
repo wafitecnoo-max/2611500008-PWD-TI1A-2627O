@@ -35,9 +35,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 // Mengamankan data sebelum ditampilkan kembali ke halaman HTML.
 // P6: PHP dasar dan pemrograman sisi peladen
 // Bagian 1: Variabel dan konstanta
-$nim = "0344300002";
-$namaMahasiswa = "Cantika Putih";
-$programStudi = "SI";
+$nim = "2611500008";
+$namaMahasiswa = "Muhammad Indzar Wafi";
+$programStudi = "TI";
 $tahunAkademik = "2026/2027";
 $semester = 4;
 $ipk = 3.75;
@@ -45,7 +45,7 @@ $statusAktif = true;
 $catatanTambahan = null;
 
 const NAMA_MATA_KULIAH = "Pemrograman Web Dasar";
-const PROFIL_GITHUB = "satpamal";
+const PROFIL_GITHUB = "wafitecnoo-max";
 
 // Bagian 2: Operator
 $batasSemester = 8;
@@ -106,6 +106,7 @@ switch ($programStudi) {
 			<ul id="navMenu">
 				<li><a href="#home">Beranda</a></li>
 				<li><a href="#about">Tentang</a></li>
+				<li><a href="#rencana">Rencana Kegiatan</a></li>
 				<li><a href="#contact">Kontak</a></li>
 			</ul>
 		</nav>
@@ -173,6 +174,19 @@ switch ($programStudi) {
 				</ol>
 			</article>
 		</section>
+
+		<section id="rencana">
+			<h2>Rencana Kegiatan</h2>
+
+			<article>
+				<h3>Rencana Proyek</h3>
+				<ul>
+					<li>Membuat halaman web sederhana menggunakan PHP.</li>
+					<li>Mengimplementasikan formulir kontak dengan validasi.</li>
+					<li>Menyimpan data formulir ke dalam session.</li>
+					<li>Menggunakan perulangan untuk menampilkan data dinamis.</li>
+				</ul>
+			</article>
 
 		<section id="contact">
 			<h2>Kontak</h2>
