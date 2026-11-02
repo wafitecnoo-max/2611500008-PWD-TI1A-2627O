@@ -229,7 +229,7 @@ switch ($programStudi) {
 
 		<section id="rencana">
 			<h2>Rencana Kegiatan Mahasiswa</h2>
-				<form id=rencanaForm data-validation="rencana" action="index.php" method="post">
+				<form id=rencanaForm data-validation="rencana" action="index.php" method="post" novalidate>
 				<input type="hidden" name="jenis_formulir" value="rencana" />	
 				<div class="form-group">
 						<label for="nama_kegiatan">Nama Kegiatan:</label><br />
@@ -247,8 +247,8 @@ switch ($programStudi) {
 					</div>
 					
 					<div class="form-group">
-						<label for="tanggal_Pelaksanaan">Tanggal Pelaksanaan:</label><br />
-						<input class="input-form" type="date" id="tanggal_Pelaksanaan" name="tanggal_Pelaksanaan" required />
+						<label for="tanggal_pelaksanaan">Tanggal Pelaksanaan:</label><br />
+						<input class="input-form" type="date" id="tanggal_pelaksanaan" name="tanggal_pelaksanaan" required />
 					</div>
 
 					<div class="form-group">
@@ -283,7 +283,7 @@ switch ($programStudi) {
         <p><strong>Lokasi Kegiatan:</strong> <?= htmlspecialchars($_SESSION["lokasi_kegiatan"] ?? "", ENT_QUOTES, "UTF-8") ?></p>
         <p><strong>Deskripsi Kegiatan:</strong> <?= nl2br(htmlspecialchars($_SESSION["deskripsi_kegiatan"] ?? "", ENT_QUOTES, "UTF-8")) ?></p>
     </article>
-<?php endif; ?>
+<?php endif; ?>	
 				
 			<article>
 				<h3>Rencana Proyek</h3>
@@ -294,6 +294,7 @@ switch ($programStudi) {
 					<li>Menggunakan perulangan untuk menampilkan data dinamis.</li>
 				</ul>
 			</article>
+			</section>
 
 		<section id="contact">
 			<h2>Kontak</h2>
