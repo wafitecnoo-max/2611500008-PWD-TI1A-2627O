@@ -177,7 +177,41 @@ switch ($programStudi) {
 
 		<section id="rencana">
 			<h2>Rencana Kegiatan</h2>
+				<form id=rencanaForm action="index.php" method="post">
+					<div class="form-group">
+						<label for="nama_kegiatan">Nama Kegiatan:</label><br />
+						<input class="input-form" type="text" id="nama_kegiatan" name="nama_kegiatan" placeholder="Masukkan nama kegiatan" maxlength="100" required />
+					</div>
 
+					<div class="form-group">
+						<label for="kategori_kegiatan">Kategori Kegiatan:</label><br />
+						<select class="input-form" id="kategori_kegiatan" name="kategori_kegiatan" required>
+							<option value="">-- Pilih Kategori --</option>
+							<option value="akademik">Akademik</option>
+							<option value="organisasi">Organisasi</option>
+							<option value="sosial">Sosial</option>
+						</select>
+					</div>
+					
+					<div class="form-group">
+						<label for="tanggal_Pelaksanaan">Tanggal Pelaksanaan:</label><br />
+						<input class="input-form" type="date" id="tanggal_Pelaksanaan" name="tanggal_Pelaksanaan" required />
+					</div>
+
+					<div class="form-group">
+						<label for="lokasi_kegiatan">Lokasi Kegiatan:</label><br />
+						<input class="input-form" type="text" id="lokasi_kegiatan" name="lokasi_kegiatan" placeholder="Masukkan lokasi kegiatan" required />
+					</div>
+
+					<div class="form-group">
+						<label for="deskripsi_kegiatan">Deskripsi Kegiatan:</label><br />
+						<textarea class="input-form" id="deskripsi_kegiatan" name="deskripsi_kegiatan" maxlength="300" placeholder="Tulis deskripsi kegiatan" required></textarea>
+					</div>
+
+					<button type="submit">Kirim</button>
+					<button type="reset">Batal</button>
+				</form>
+				
 			<article>
 				<h3>Rencana Proyek</h3>
 				<ul>
