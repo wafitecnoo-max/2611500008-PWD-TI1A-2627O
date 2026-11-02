@@ -214,6 +214,24 @@ switch ($programStudi) {
 					<p class="form-feedback" data-form-feedback aria-live="polite"></p>
 				</form>
 
+				<?php if (count($errorsRencana) > 0): ?>
+    <ul class="form-feedback-error" role="alert">
+        <?php foreach ($errorsRencana as $error): ?>
+            <li><?= htmlspecialchars($error, ENT_QUOTES, "UTF-8") ?></li>
+        <?php endforeach; ?>
+    </ul>
+<?php endif; ?>
+
+<?php if (isset($_SESSION["nama_kegiatan"])): ?>
+    <article id="hasilRencana" class="submission-result" aria-live="polite">
+        <h3>Data Rencana Kegiatan yang Dikirim</h3>
+        <p><strong>Nama Kegiatan:</strong> <?= htmlspecialchars($_SESSION["nama_kegiatan"], ENT_QUOTES, "UTF-8") ?></p>
+        <p><strong>Kategori Kegiatan:</strong> <?= htmlspecialchars(ucfirst($_SESSION["kategori_kegiatan"] ?? ""), ENT_QUOTES, "UTF-8") ?></p>
+        <p><strong>Tanggal Pelaksanaan:</strong> <?= htmlspecialchars($_SESSION["tanggal_pelaksanaan"] ?? "", ENT_QUOTES, "UTF-8") ?></p>
+        <p><strong>Lokasi Kegiatan:</strong> <?= htmlspecialchars($_SESSION["lokasi_kegiatan"] ?? "", ENT_QUOTES, "UTF-8") ?></p>
+        <p><strong>Deskripsi Kegiatan:</strong> <?= nl2br(htmlspecialchars($_SESSION["deskripsi_kegiatan"] ?? "", ENT_QUOTES, "UTF-8")) ?></p>
+    </article>
+<?php endif; ?>
 				
 			<article>
 				<h3>Rencana Proyek</h3>
