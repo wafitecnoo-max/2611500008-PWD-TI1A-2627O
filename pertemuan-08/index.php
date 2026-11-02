@@ -178,7 +178,8 @@ switch ($programStudi) {
 		<section id="rencana">
 			<h2>Rencana Kegiatan Mahasiswa</h2>
 				<form id=rencanaForm data-validation="rencana" action="index.php" method="post">
-					<div class="form-group">
+				<input type="hidden" name="jenis_formulir" value="rencana" />	
+				<div class="form-group">
 						<label for="nama_kegiatan">Nama Kegiatan:</label><br />
 						<input class="input-form" type="text" id="nama_kegiatan" name="nama_kegiatan" placeholder="Masukkan nama kegiatan" maxlength="100" required />
 					</div>
@@ -210,10 +211,10 @@ switch ($programStudi) {
 
 					<button type="submit">Kirim</button>
 					<button type="reset">Batal</button>
+					<p class="form-feedback" data-form-feedback aria-live="polite"></p>
 				</form>
 
-				<input type="hidden" name="jenis_formulir" value="rencana" />
-
+				
 			<article>
 				<h3>Rencana Proyek</h3>
 				<ul>
