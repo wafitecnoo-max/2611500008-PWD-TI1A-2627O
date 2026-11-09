@@ -1,6 +1,16 @@
 <?php
 session_start();
 
+function berisihkan ($teks) {
+	return
+	htmlspecialchars($teks ?? "", ENT_QUOTES, "UTF-8");
+}
+
+echo "<h1>hai disana</h1>";
+echo "<script>alert('hai disana');</script>";
+echo berisihkan("<p>hai disana</p>");
+echo berisihkan ("<script>alert('hai disana');</script>");
+
 // P7: Memproses data formulir dan menyimpannya ke dalam session.
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 	$nama = trim((string) ($_POST["nama"] ?? ""));
