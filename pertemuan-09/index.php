@@ -1,9 +1,7 @@
 <?php
 session_start();
 
-function bersihkan($teks) {
-	return htmlspecialchars($teks ?? "", ENT_QUOTES, "UTF-8");
-}
+include("fungsi.php");
 
 echo "<h1>hai disana</h1>";
 echo "<script>alert('hai disana');</script>";
