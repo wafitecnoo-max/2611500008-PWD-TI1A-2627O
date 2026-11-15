@@ -275,11 +275,11 @@ switch ($programStudi) {
 			<?php if (isset($_SESSION["nama"])): ?>
 				<article id="hasilKontak" class="submission-result" aria-live="polite">
 					<h3>Data Formulir yang Dikirim</h3>
-					<p><strong>Nama Lengkap:</strong> <?= htmlspecialchars($_SESSION["nama"] ?? "", ENT_QUOTES, "UTF-8") ?></p>
-					<p><strong>Email:</strong> <?= htmlspecialchars($_SESSION["email"] ?? "", ENT_QUOTES, "UTF-8") ?></p>
-					<p><strong>Semester:</strong> <?= htmlspecialchars($_SESSION["semester"] ?? "", ENT_QUOTES, "UTF-8") ?></p>
-					<p><strong>Tanggal Kunjungan:</strong> <?= htmlspecialchars($_SESSION["tanggal"] ?? "", ENT_QUOTES, "UTF-8") ?></p>
-					<p><strong>Jenis Pesan:</strong> <?= htmlspecialchars($_SESSION["jenis_pesan"] ?? "", ENT_QUOTES, "UTF-8") ?></p>
+					<p><strong>Nama Lengkap:</strong> <?= berisihkan($_SESSION["nama"] ?? "", ENT_QUOTES, "UTF-8") ?></p>
+					<p><strong>Email:</strong> <?= berisihkan($_SESSION["email"] ?? "", ENT_QUOTES, "UTF-8") ?></p>
+					<p><strong>Semester:</strong> <?= berisihkan($_SESSION["semester"] ?? "", ENT_QUOTES, "UTF-8") ?></p>
+					<p><strong>Tanggal Kunjungan:</strong> <?= berisihkan($_SESSION["tanggal"] ?? "", ENT_QUOTES, "UTF-8") ?></p>
+					<p><strong>Jenis Pesan:</strong> <?= berisihkan	($_SESSION["jenis_pesan"] ?? "", ENT_QUOTES, "UTF-8") ?></p>
 					<p><strong>Topik yang Diminati:</strong>
 						<?= htmlspecialchars(implode(", ", $_SESSION["minat"] ?? []), ENT_QUOTES, "UTF-8") ?>
 					</p>
