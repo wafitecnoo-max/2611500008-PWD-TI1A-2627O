@@ -1,5 +1,5 @@
 di pertemuan 9 saya melakukan:
-1. menyalin artefak perteuan 8 untuk basle line pertemuan 9, dan menguji tempilan pertemuan 9. hasilnya sama seperti pertemuan 8
-2. membuat fungsi berdishkan untuk membatakan eksesuksi html atau javascript sebelumoutput dibersihkan. tanpa fungsi bersihkan (). output akan dieksekusi.
-3. membuat file dengan nama index.php berisi fungsi bersihkan(). yang dipindahkan dari index.php
-4. 
+1. menyalin artefak pertemuan 8 untuk baseline pertemuan 9, dan menguji tampilan pertemuan 9. hasilnya sama seperti pertemuan 8.
+2. membuat fungsi bersihkan($teks) untuk membatalkan eksekusi script HTML atau JavaScript sebelum output dihasilkan. tanpa fungsi bersihkan(), output akan dieksekusi, contohnya `<h1>teks</h1>` membuat teks menjadi heading. dengan fungsi bersihkan(), output hanya tampil sebagai teks biasa. semua htmlspecialchars pada output diganti dengan bersihkan().
+3. membuat file dengan nama fungsi.php berisi fungsi bersihkan() yang dipindahkan dari index.php. pada index.php, baris fungsi diganti dengan include("fungsi.php");. setelah pengujian, hasilnya tetap sama antara fungsi bersihkan() ditulis langsung di index.php maupun setelah dipindahkan ke fungsi.php.
+4. membuat satu session array asosiatif ($_SESSION["form_data"]) untuk menampung data dari form, menggantikan banyak session yang terpisah. outputnya ditampilkan dengan foreach. setelah pengujian, data form tetap tampil sama seperti sebelumnya.
