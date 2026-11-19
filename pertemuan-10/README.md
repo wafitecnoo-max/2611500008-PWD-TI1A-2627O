@@ -18,3 +18,21 @@ di pertemuan 10 saya melakukan:
     ADD id INT NOT NULL AUTO_INCREMENT PRIMARY KEY FIRST;
     ```
 
+11. mempelajari perintah DDL. CREATE DATABASE membuat basis data, USE memilih basis data yang aktif, dan CREATE TABLE membuat tabel beserta atributnya. bentuk SQL dari tabel yang saya buat:
+
+    ```sql
+    CREATE DATABASE db_pwd_2611500008;
+    USE db_pwd_2611500008;
+    CREATE TABLE tbl_kontak_2611500008 (
+        id INT PRIMARY KEY AUTO_INCREMENT,
+        nama VARCHAR(50),
+        email VARCHAR(255),
+        semester TINYINT,
+        tanggal DATE,
+        jenis_pesan VARCHAR(20),
+        minat VARCHAR(50),
+        prodi VARCHAR(2),
+        pesan VARCHAR(300)
+    );
+    ```
+
