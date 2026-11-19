@@ -56,3 +56,4 @@ di pertemuan 10 saya melakukan:
     ```
 
     kolom id tidak ditulis karena terisi otomatis oleh AUTO_INCREMENT. data Andi mendapat id 2.
+15. memeriksa data awal di tab Browse. kedua data tampil dengan id 1 dan 2 yang terbentuk otomatis, dan kolom minat tampil sebagai teks.
