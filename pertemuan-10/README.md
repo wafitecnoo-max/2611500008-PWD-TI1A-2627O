@@ -73,3 +73,33 @@ di pertemuan 10 saya melakukan:
     - ada perintah INSERT INTO dengan 2 data (Budi Santoso dan Andi) yang sama dengan data di tab Browse.
     - index yang diekspor hanya ADD PRIMARY KEY (id), tanpa UNIQUE.
     - kolom id memakai AUTO_INCREMENT.
+20. menyesuaikan index.php dan fungsi.php pertemuan-10 dengan kode akhir di modul. perubahan yang dilakukan:
+    - menghapus 4 baris echo percobaan "hai disana" yang tersisa dari P9. baris ini membuat tulisan dan alert "hai disana" muncul sebelum `<!doctype html>` setiap kali halaman dibuka.
+    - mengganti include("fungsi.php") menjadi require_once("fungsi.php").
+    - menambahkan fungsi tebal() di fungsi.php.
+    - menambahkan larik terindeks $teknologiWeb dan bagian "Teknologi Web yang Dipelajari" yang ditampilkan dengan foreach.
+    - mengamankan semua output dengan bersihkan(), dan nama mahasiswa di beranda memakai tebal().
+    - menampilkan topik yang diminati sebagai daftar, dengan tulisan "Belum ada topik yang dipilih." jika tidak ada yang dicentang.
+    - mengganti data profil contoh dengan data saya: NIM 2611500008, nama Muhammad Indzar Wafi, program studi TI, dan profil GitHub wafitecnoo-max.
+
+    perubahan hanya dilakukan di pertemuan-10. artefak pertemuan-09 tidak diubah.
+
+## Cara Menjalankan
+
+1. buka Laragon, lalu klik Start All. pastikan Apache dan MySQL berjalan.
+2. buka phpMyAdmin di http://localhost/phpmyadmin/ dan login dengan username root tanpa password.
+3. jika basis data db_pwd_2611500008 belum ada, buat basis data dengan nama tersebut, pilih basis data itu, buka tab Import, pilih berkas pertemuan-10/db_pwd_2611500008.sql, lalu klik Import. tabel tbl_kontak_2611500008 beserta data awalnya akan terbentuk.
+4. buka aplikasi di http://localhost/PWD/2627o/ti1a/2611500008-PWD-TI1A-2627O/pertemuan-10/
+
+## Pengujian Hasil Akhir
+
+| No. | Yang diperiksa | Hasil |
+|---|---|---|
+| 1 | struktur tabel tbl_kontak_2611500008 | 9 atribut sesuai rancangan, index hanya PRIMARY pada id |
+| 2 | data awal | 2 data (id 1 Budi Santoso, id 2 Andi) tersimpan dan sesuai ketentuan formulir |
+| 3 | berkas db_pwd_2611500008.sql | memuat CREATE TABLE dan INSERT INTO, tanpa UNIQUE |
+| 4 | impor ulang berkas SQL ke basis data uji sementara | berhasil, tabel terbentuk dengan 2 data. basis data uji dihapus kembali setelah pemeriksaan |
+| 5 | halaman pertemuan-10 di localhost | tampil normal tanpa tulisan "hai disana", nama dan NIM saya tampil di beranda dan footer, daftar 5 teknologi web tampil |
+| 6 | validasi JavaScript formulir kontak | mengirim formulir kosong menampilkan pesan "Nama lengkap harus diisi 3 sampai 50 karakter." |
+| 7 | pengiriman formulir ke PHP | data tampil di bagian "Data Formulir yang Dikirim", minat tampil sebagai daftar, dan tag HTML pada input tampil sebagai teks biasa |
+| 8 | artefak pertemuan-09 | tidak ada berkas yang berubah sejak baseline pertemuan-10 |
