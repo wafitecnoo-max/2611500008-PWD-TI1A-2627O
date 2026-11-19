@@ -45,3 +45,4 @@ di pertemuan 10 saya melakukan:
     ```
 
     setelah diperbaiki, struktur tabel berisi 9 atribut sesuai rancangan dan index yang tersisa hanya PRIMARY pada kolom id.
+13. memasukkan data awal ke tabel kontak. data pertama: Budi Santoso, budi@mail.com, semester 1, tanggal 2026-11-16, prodi TI, pesan "Halo, ini percobaan". kolom id dibiarkan kosong dan terisi otomatis menjadi 1.
