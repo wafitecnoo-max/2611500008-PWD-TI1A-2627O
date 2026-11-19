@@ -36,3 +36,12 @@ di pertemuan 10 saya melakukan:
     );
     ```
 
+12. memeriksa struktur tabel di tab Structure dan memperbaiki ketidaksesuaian. saya tidak sengaja menambahkan index UNIQUE pada kolom id, dan ternyata ada dua index tambahan (id dan id_2). keduanya saya hapus dengan perintah:
+
+    ```sql
+    ALTER TABLE tbl_kontak_2611500008
+    DROP INDEX id,
+    DROP INDEX id_2;
+    ```
+
+    setelah diperbaiki, struktur tabel berisi 9 atribut sesuai rancangan dan index yang tersisa hanya PRIMARY pada kolom id.
