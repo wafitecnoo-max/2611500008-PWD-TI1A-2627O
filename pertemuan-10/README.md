@@ -46,3 +46,13 @@ di pertemuan 10 saya melakukan:
 
     setelah diperbaiki, struktur tabel berisi 9 atribut sesuai rancangan dan index yang tersisa hanya PRIMARY pada kolom id.
 13. memasukkan data awal ke tabel kontak. data pertama: Budi Santoso, budi@mail.com, semester 1, tanggal 2026-11-16, prodi TI, pesan "Halo, ini percobaan". kolom id dibiarkan kosong dan terisi otomatis menjadi 1.
+14. mempelajari perintah SQL INSERT (DML). saat pertama mencoba, saya menjalankan template INSERT dari phpMyAdmin tanpa mengganti placeholder [value-1] dan seterusnya, sehingga muncul error #1366 Incorrect integer value: '[value-3]' for column 'semester'. setelah placeholder diganti dengan data asli, perintah berikut berhasil dijalankan:
+
+    ```sql
+    INSERT INTO tbl_kontak_2611500008
+    (nama, email, semester, tanggal, jenis_pesan, minat, prodi, pesan)
+    VALUES
+    ('Andi', 'andi@example.com', 2, '2026-11-15', 'pertanyaan', 'HTML, CSS', 'TI', 'Saya ingin belajar pemrograman web.');
+    ```
+
+    kolom id tidak ditulis karena terisi otomatis oleh AUTO_INCREMENT. data Andi mendapat id 2.
