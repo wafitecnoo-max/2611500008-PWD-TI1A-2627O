@@ -9,3 +9,5 @@ di pertemuan 10 saya melakukan:
    - nama tabel: tbl_kontak_2611500008
 7. merancang atribut dan tipe data tabel kontak dari 8 data formulir: nama VARCHAR(50), email VARCHAR(255), semester TINYINT, tanggal DATE, jenis_pesan VARCHAR(20), minat VARCHAR(50), prodi VARCHAR(2), pesan VARCHAR(300). ukuran nama dan pesan disesuaikan dengan maxlength di formulir (50 dan 300).
 8. menentukan primary key: menambahkan atribut id dengan tipe INT, PRIMARY KEY, dan AUTO_INCREMENT sebagai identitas unik setiap data kontak.
+9. memeriksa rancangan akhir struktur tabel kontak. tabel memiliki 9 atribut.
+   hanya atribut id yang menjadi PRIMARY KEY dengan AUTO_INCREMENT.
