@@ -67,3 +67,4 @@ di pertemuan 10 saya melakukan:
 
     setelah diperbaiki, kedua data sudah sesuai ketentuan atribut formulir P9.
 17. menentukan pengaturan ekspor basis data db_pwd_2611500008: Export method Quick dan Format SQL.
+18. mengekspor basis data ke berkas db_pwd_2611500008.sql dan memindahkannya ke direktori pertemuan-10. hasil ekspor pertama masih memuat dua index UNIQUE karena diekspor sebelum index tersebut dihapus, jadi saya ekspor ulang. nama berkas hasil unduhan kedua sempat menjadi "db_pwd_2611500008 (1).sql", lalu diganti menjadi db_pwd_2611500008.sql.
