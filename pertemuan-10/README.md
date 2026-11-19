@@ -11,3 +11,10 @@ di pertemuan 10 saya melakukan:
 8. menentukan primary key: menambahkan atribut id dengan tipe INT, PRIMARY KEY, dan AUTO_INCREMENT sebagai identitas unik setiap data kontak.
 9. memeriksa rancangan akhir struktur tabel kontak. tabel memiliki 9 atribut.
    hanya atribut id yang menjadi PRIMARY KEY dengan AUTO_INCREMENT.
+10. membuat basis data db_pwd_2611500008 dan tabel tbl_kontak_2611500008 di phpMyAdmin. saat pertama mengisi struktur tabel, saya salah mengisi nama kolom dengan judul tabel di modul (No, Atribut, TipeData, Keterangan). kesalahan ini saya perbaiki sehingga tabel berisi 8 kolom yang benar. kolom id belum ada di awal, jadi saya tambahkan lewat tab SQL:
+
+    ```sql
+    ALTER TABLE tbl_kontak_2611500008
+    ADD id INT NOT NULL AUTO_INCREMENT PRIMARY KEY FIRST;
+    ```
+
