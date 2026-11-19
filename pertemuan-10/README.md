@@ -57,3 +57,12 @@ di pertemuan 10 saya melakukan:
 
     kolom id tidak ditulis karena terisi otomatis oleh AUTO_INCREMENT. data Andi mendapat id 2.
 15. memeriksa data awal di tab Browse. kedua data tampil dengan id 1 dan 2 yang terbentuk otomatis, dan kolom minat tampil sebagai teks.
+16. memeriksa dan memperbaiki data awal. data id 1 belum sesuai ketentuan formulir: jenis_pesan berisi "Pertanyaan" (seharusnya pertanyaan, huruf kecil) dan minat berisi "Web" (seharusnya HTML, CSS, atau HTML, CSS). data tersebut saya perbaiki dengan:
+
+    ```sql
+    UPDATE tbl_kontak_2611500008
+    SET jenis_pesan = 'pertanyaan', minat = 'HTML, CSS'
+    WHERE id = 1;
+    ```
+
+    setelah diperbaiki, kedua data sudah sesuai ketentuan atribut formulir P9.
