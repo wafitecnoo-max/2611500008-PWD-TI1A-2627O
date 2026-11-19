@@ -66,3 +66,4 @@ di pertemuan 10 saya melakukan:
     ```
 
     setelah diperbaiki, kedua data sudah sesuai ketentuan atribut formulir P9.
+17. menentukan pengaturan ekspor basis data db_pwd_2611500008: Export method Quick dan Format SQL.
